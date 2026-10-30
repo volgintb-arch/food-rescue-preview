@@ -104,15 +104,16 @@
       </nav>
     </header>
     <main>
-      <iframe id="app" src="customer/" title="Приложение покупателя" allow="geolocation"></iframe>
+      <iframe id="app" src="customer/?v=1793376510958" title="Приложение покупателя" allow="geolocation"></iframe>
     </main>
     <script>
       const app = document.getElementById('app');
+      const build = '1793376510958';
       for (const name of ['customer', 'partner'])
         document.getElementById(name).onclick = () => {
           for (const id of ['customer', 'partner'])
             document.getElementById(id).setAttribute('aria-pressed', String(id === name));
-          app.src = name + '/';
+          app.src = name + '/?v=' + build;
           app.title = name === 'customer' ? 'Приложение покупателя' : 'Приложение заведения';
         };
     </script>
