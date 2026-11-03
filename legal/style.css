@@ -1,0 +1,58 @@
+:root {
+  --bg: #f7f8f4;
+  --surface: #ffffff;
+  --ink: #1d2a20;
+  --muted: #5a6a5e;
+  --line: #d9dfd5;
+  --green: #1f7a3d;
+  --warn-bg: #fff3cd;
+  --warn-ink: #5c4400;
+  --warn-line: #e0c36a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131a15;
+    --surface: #1b251e;
+    --ink: #e8efe9;
+    --muted: #a3b2a7;
+    --line: #2f3d33;
+    --green: #67c58a;
+    --warn-bg: #3a3012;
+    --warn-ink: #f3dc9a;
+    --warn-line: #7a6521;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+header { background: var(--surface); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; padding-top: 10px; padding-bottom: 10px; }
+.brand { margin: 0; font-weight: 700; color: var(--green); }
+nav { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+nav a { color: var(--ink); text-decoration: none; padding: 6px 0; }
+nav a[aria-current='page'] { color: var(--green); border-bottom: 2px solid var(--green); }
+nav a:hover { text-decoration: underline; }
+main { padding-top: 24px; padding-bottom: 40px; overflow-wrap: anywhere; }
+.table { max-width: 100%; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 16px 0; }
+h2 { font-size: 1.3rem; margin: 32px 0 8px; }
+h3 { font-size: 1.1rem; margin: 24px 0 6px; }
+a { color: var(--green); }
+code { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; font-size: 0.9em; }
+blockquote { margin: 16px 0; padding: 4px 16px; border-left: 4px solid var(--line); color: var(--muted); background: var(--surface); }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+.draft { background: var(--warn-bg); color: var(--warn-ink); border: 2px solid var(--warn-line); border-radius: 8px; padding: 12px 16px; font-size: 0.95rem; }
+.todo { background: var(--warn-bg); color: var(--warn-ink); border-radius: 4px; padding: 0 4px; font-weight: 700; }
+.table { overflow-x: auto; margin: 12px 0; }
+table { border-collapse: collapse; min-width: 100%; background: var(--surface); font-size: 0.92rem; }
+th, td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+th { background: var(--bg); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+.steps li { margin: 6px 0; }
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; padding: 16px 0 32px; }
+@media (max-width: 480px) { h1 { font-size: 1.45rem; } }
